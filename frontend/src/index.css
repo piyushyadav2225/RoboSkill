@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #14110E;
+    --bg-secondary: #1F1914;
+    --bg-elevated: #2A221B;
+    --bg-parchment: #E6DCBF;
+    --antique-gold: #C19A55;
+    --antique-gold-bright: #E5BE72;
+    --antique-gold-hover: #F2CF87;
+    --amber-glow: #F2994A;
+    --parchment: #D8C7A0;
+    --parchment-light: #F4EBD9;
+    --bronze: #80643C;
+    --bronze-dark: #4A3820;
+    --main-text: #E8DFC9;
+    --muted-text: #9E917A;
+    --border-brass: rgba(193, 154, 85, 0.28);
+    --border-brass-bright: rgba(229, 190, 114, 0.7);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--main-text);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-ancient {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-manuscript {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbars in Antique Brass */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #14110E;
+}
+::-webkit-scrollbar-thumb {
+  background: #3B2E1E;
+  border: 1px solid #80643C;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C19A55;
+}
+
+/* Workshop Light & Atmospheric Textures */
+.workshop-vignette {
+  background: radial-gradient(circle at 50% 20%, rgba(242, 153, 74, 0.09) 0%, rgba(20, 17, 14, 0.95) 75%);
+}
+
+.lantern-glow {
+  box-shadow: 0 0 35px rgba(242, 153, 74, 0.2), inset 0 0 15px rgba(229, 190, 114, 0.1);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(193, 154, 85, 0.25);
+}
+
+/* Aged Parchment Panels with Engraved Dual Hairlines */
+.parchment-panel {
+  background: linear-gradient(145deg, #1F1914 0%, #17130F 100%);
+  border: 1px solid var(--border-brass);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(229, 190, 114, 0.18);
+  position: relative;
+}
+
+.parchment-panel::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid rgba(193, 154, 85, 0.1);
+  pointer-events: none;
+}
+
+/* Manuscript Parchment Style (Light paper sheet on dark oak desk) */
+.manuscript-sheet {
+  background: #E8DEC5;
+  background-image: 
+    radial-gradient(rgba(128, 100, 60, 0.06) 1px, transparent 1px),
+    linear-gradient(to right, rgba(128, 100, 60, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 100, 60, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+  color: #241B12;
+  border: 2px solid #80643C;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.8), inset 0 0 40px rgba(128, 100, 60, 0.15);
+}
+
+.brass-border {
+  border: 1px solid var(--border-brass);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brass-border:hover {
+  border-color: var(--antique-gold-bright);
+  box-shadow: 0 0 20px rgba(193, 154, 85, 0.3);
+}
+
+/* Golden Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF5DF 0%, #E5BE72 45%, #C19A55 75%, #80643C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bronze-gradient-text {
+  background: linear-gradient(135deg, #D8C7A0 0%, #A88750 60%, #5E4627 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ornate Arcana-style Brass Buttons */
+.brass-btn {
+  background: linear-gradient(180deg, #3A2E1F 0%, #20180F 100%);
+  border: 1px solid #C19A55;
+  color: #FFF5DF;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 0.7rem 1.6rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(242, 207, 135, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-transform: uppercase;
+}
+
+.brass-btn:hover {
+  background: linear-gradient(180deg, #E5BE72 0%, #A37C33 100%);
+  color: #14110E;
+  border-color: #FFF5DF;
+  box-shadow: 0 0 24px rgba(229, 190, 114, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.brass-btn-secondary {
+  background: rgba(31, 25, 20, 0.7);
+  border: 1px solid rgba(193, 154, 85, 0.45);
+  color: #D8C7A0;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.1em;
+  padding: 0.7rem 1.6rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.brass-btn-secondary:hover {
+  border-color: #E5BE72;
+  color: #FFF5DF;
+  background: rgba(193, 154, 85, 0.15);
+  box-shadow: 0 0 15px rgba(193, 154, 85, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Ornate Celestial Corner Embellishments */
+.celestial-frame {
+  position: relative;
+}
+.celestial-frame::before {
+  content: '✦';
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 10px;
+  color: #C19A55;
+  opacity: 0.65;
+}
+.celestial-frame::after {
+  content: '✦';
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 10px;
+  color: #C19A55;
+  opacity: 0.65;
+}
+
+/* Rotating Gear Keyframes */
+@keyframes gearRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gearCounterRotate {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-gear-slow {
+  animation: gearRotate 50s linear infinite;
+}
+
+.animate-gear-reverse {
+  animation: gearCounterRotate 45s linear infinite;
+}
+
+/* Blueprint Grid with Antique Sepia Texture */
+.bg-blueprint {
+  background-color: #14110E;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(242, 153, 74, 0.08) 0%, transparent 60%),
+    radial-gradient(rgba(193, 154, 85, 0.09) 1px, transparent 1px),
+    linear-gradient(to right, rgba(128, 100, 60, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 100, 60, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 36px 36px, 72px 72px, 72px 72px;
+}
